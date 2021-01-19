@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  /* --primary-colour: #ffe6e6; */
+  --primary-colour: #a3ddcb;
+  --secondary-colour: ;
+  --button: #c7753d;
+  --width-break: 600px;
+}
+
+body {
+  font-family: 'Inconsolata', monospace;
+  margin: 0;
+}
+
+nav {
+  background-color: var(--primary-colour);
+  text-align: center;
+  max-width: var(--width-break);
+  margin: auto;
+}
+
+.header-title {
+  font-size: 2rem;
+  color: var(--secondary-colour);
+  font-weight: bold;
+  padding: 1.5rem;
+}
+
+.img {
+  max-width: 150px;
+  /* display: block; */
+  vertical-align: left;
+  margin: auto;
+  padding: 1rem 2rem;
+}
+
+.main{
+  margin: auto;
+  padding: 2.5rem;
+  max-width: var(--width-break);
+  text-align: center;
+  background-color: #e8e9a1;
+}
+
+.city-name {
+  font-size: 20px;
+  color: var(--secondary-colour);
+  font-weight: bold;
+}
+
+textarea {
+    box-sizing: border-box;
+    display: block;
+    width: 60%;
+    min-height: 10vh;
+    margin-top: 1rem;
+    margin-left: 4.5rem;
+    font-size: large;
+    padding: 0.3rem;
+}
+
+.weather {
+  font-size: 20px;
+  color: var(--secondary-colour);
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+#btn-data {
+  color: var(--secondary-colour);
+  font-weight: bolder;
+  font-size: large;
+  background-color: var(--button);
+  margin: 2.5rem 0rem;
+  padding: 0.5rem 1rem;
+  border-radius: 00.5rem;
+}
+
+#output {
+  border: 1px solid black;
+  height: 10vh;
+  box-sizing: border-box;
+  width: 60%;
+  margin-top: 1rem;
+  margin-left: 4.5rem;
+  padding: 0rem 1rem;
+  padding-top: 0.6rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+footer {
+  /* position: fixed; */
+  bottom: 0;
+  width: 100%;
+  padding: 3rem;
+  background-color: var(--primary-colour);
+  text-align: center;
+  max-width: var(--width-break);
+  margin: auto;
+}
+
+.footer-pills {
+  font-size: small;
+  padding: 0rem 0.7rem;
+  color: black;
+}

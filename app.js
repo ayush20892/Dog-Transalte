@@ -1,21 +1,31 @@
-let inputText = document.querySelector("#txt-input");
-let btnTranslate = document.querySelector("#btn-data");
-let outputText = document.querySelector("#output");
+var translateButton = document.querySelector("#btn-data");
+var translateInput = document.querySelector("#txt-input");
+var translateOutput = document.querySelector("#output");
 
-let url = "https://api.funtranslations.com/translate/doge.json";
+var url = "https://api.funtranslations.com/translate/doge.json"
 
-function errorHandler(error) {
-    alert('Something went wrong:'+error);
+function constructURL(inputText) {
+    var encodedURI = encodeURI(inputText);
+    return `${url}?text=${encodedURI}`;
 }
 
+function buttonClickHandler(event) {
+    console.log("button clicked");
+    var input = translateInput.value;
+    var finalURL = constructURL(input);
+    console.log(finalURL);
+    fetch(finalURL)
+        .then(response => response.json())
+        .then(json => {
+            translateOutput.innerText = json.contents.translated;
+        })
+        .catch(() => alert("some error occured"))
+    
+}
 
+function constructURL(inputText) {
+    var encodedURI = encodeURI(inputText);
+    return `${url}?text=${encodedURI}`;
+}
 
-btnTranslate.addEventListener("click", function onClickHandler() {
-    let userInput = inputText.value;
-    let requestUrl = url + "?text=" + userInput;
-
-    fetch(requestUrl)
-       .then(res => res.json())
-       .then(json => outputText.innerText = json.content.translated)
-       .catch(errorHandler);
-}); 
+translateButton.addEventListener("click", buttonClickHandler)
